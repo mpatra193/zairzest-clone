@@ -273,7 +273,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 
 .login-left-container {
     align-items: center;
-    background-image: url(/static/media/auth_bg.6f3fffecc27bb1aef6e1.webp);
+    background-image: url(/zairzest-clone/static/media/auth_bg.6f3fffecc27bb1aef6e1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
@@ -9664,7 +9664,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 }
 
 .top-part {
-    background-image: url(/static/media/bg.90927ac0bfc04d80194b.png);
+    background-image: url(/zairzest-clone/static/media/bg.90927ac0bfc04d80194b.png);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9855,13 +9855,13 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 }
 
 .bottom-part .bottom-img:first-child {
-    background-image: url(/static/media/tech-events.8e242174caa90e02ff7b.webp);
+    background-image: url(/zairzest-clone/static/media/tech-events.8e242174caa90e02ff7b.webp);
     background-position: 50%;
     background-size: cover
 }
 
 .bottom-part .bottom-img:nth-child(2) {
-    background-image: url(/static/media/fun-events.c714ccb7842c6927e7c4.webp);
+    background-image: url(/zairzest-clone/static/media/fun-events.c714ccb7842c6927e7c4.webp);
     background-position: 50%;
     background-size: cover
 }
