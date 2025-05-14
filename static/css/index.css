@@ -1,3 +1,19 @@
+@font-face{
+  font-family: Outfit;
+    src: url(./assets/font/Outfit-Regular.ttf);
+}
+body {
+  margin: 0;
+  font-family: Outfit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 @font-face {
     font-family: Outfit;
     src: url(/static/media/Outfit-Regular.e853df41b41bc9489a8b.ttf)
