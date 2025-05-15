@@ -73,45 +73,74 @@
                 <div class="main_navbar">
                     <div class="sub_nav">
                         <div class="navbar">
-                            <div class="navbar__left"><a href="/"><span class="zairzest-beyno-text">ZAIRZEST
-                                    </span><span class="fourO-text">4.0</span></a></div>
-                            <div class="navbar__right"><a href="/about-us">
+                            <div class="navbar__left">
+                                <a href="/zairzest-clone/">
+                                    <span class="zairzest-beyno-text">ZAIRZEST</span>
+                                    <span class="fourO-text">4.0</span>
+                                </a>
+                            </div>
+
+                            <div class="navbar__right desktop-menu">
+                                <a href="/zairzest-clone/about_us.html">
                                     <h4 class="navbar__text">About Us</h4>
-                                </a><a href="/register">
+                                </a>
+                                <a href="/zairzest-clone/registration.html">
                                     <h4 class="navbar__text">Register</h4>
-                                </a><a href="/login">
+                                </a>
+                                <a href="/zairzest-clone/signin.html">
                                     <h4 class="navbar__text">Sign In</h4>
-                                </a><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" class="navbar__menu" height="1em" width="1em"
+                                </a>
+                            </div>
+
+                            <div class="navbar__menu" id="hamburger">
+                                <!-- Hamburger Icon -->
+                                <svg stroke="currentColor" fill="white" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z">
                                     </path>
-                                </svg></div>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Hidden Mobile Menu -->
+                        <div class="mobile-menu hidden" id="mobileMenu">
+                            <a href="/zairzest-clone/about_us.html">
+                                <h4 class="navbar__text" style="text-decoration: none; color: white;">About Us</h4>
+                            </a>
+                            <a href="/zairzest-clone/registration.html">
+                                <h4 class="navbar__text" style="text-decoration: none;color: white;">Register</h4>
+                            </a>
+                            <a href="/zairzest-clone/signin.html">
+                                <h4 class="navbar__text" style="text-decoration: none;color: white;">Sign In</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="About-us">
-                    <div class="About-us-content aos-init aos-animate" data-aos="fade-up">
-                        <h1 class="About-us-header aos-init aos-animate" data-aos="fade-right">Zairza: Igniting
+                    <div class="About-us-content" data-aos="fade-up">
+                        <h1 class="About-us-header" data-aos="fade-right">Zairza: Igniting
                             Innovation</h1>
-                        <p data-aos="fade-up" class="aos-init aos-animate">Zairza, more than just a club, is a vibrant
+                        <p data-aos="fade-up" class="">Zairza, more than just a club, is a vibrant
                             community of tech enthusiasts at Odisha University of Technology and Research. Rooted in our
                             motto, "Wonder, Think, Create," we've been pushing the boundaries of innovation in Robotics,
                             Software, and Design since 2005. Officially recognized as a central club in 2007, Zairza has
                             consistently achieved excellence, earning numerous accolades.</p>
-                        <p data-aos="fade-up" class="aos-init aos-animate">Our mission is to empower students with the
+                        <p data-aos="fade-up" class="">Our mission is to empower students with the
                             skills and knowledge needed to excel in their careers. Regular workshops and sessions
                             provide a strong foundation, while industry internships offer invaluable real-world
                             experience. Strategically located in the SAC area, we're easily accessible to all students.
                         </p>
-                        <p data-aos="fade-up" class="aos-init aos-animate">Beyond academic pursuits, Zairza organizes
+                        <p data-aos="fade-up" class="">Beyond academic pursuits, Zairza organizes
                             the annual Zairzest technical fest. This three-day extravaganza features exciting
                             competitions, workshops, and hackathons. Zairzest 3.0 was a resounding success, attracting
                             hundreds of participants and showcasing the incredible talent of our members.</p>
-                        <p data-aos="fade-up" class="aos-init aos-animate">Join Zairza and be part of a legacy of
+                        <p data-aos="fade-up" class="">Join Zairza and be part of a legacy of
                             innovation. Together, we'll shape the future of technology.</p>
-                        <div class="About-us-frame aos-init aos-animate" data-aos="zoom-in"><img
+                        <div class="About-us-frame" data-aos="zoom-in"><img
                                 src="/zairzest-clone/static/media/frame-1.73cf465271f43437610e.png" alt=""><img
                                 src="/zairzest-clone/static/media/frame-2.ce973fa3289e91663090.png" alt=""><img
                                 src="/zairzest-clone/static/media/frame-3.c6b11f4c05d88c7800c9.png" alt=""><img
@@ -205,6 +234,35 @@
             </div>
         </div>
     </div>
+    <script>
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const audio = new Audio('/zairzest-clone/static/media/zairzest_sound.mp3');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+            } else {
+                audio.pause();
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+            }
+        });
+        audio.addEventListener('ended', () => {
+            playPauseIcon.classList.remove('fa-pause');
+            playPauseIcon.classList.add('fa-play');
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
+    </script>
 </body>
 
 </html>

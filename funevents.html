@@ -59,7 +59,7 @@
         }
     </style>
     <script defer="defer" src="/static/js/main.21bc1f92.js"></script>
-    <link href="/zairzest-clone/static/css/funevents.css" rel="stylesheet">
+    <link href="/zairzest-clone/static/css/index.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -76,24 +76,52 @@
                 <div class="main_navbar">
                     <div class="sub_nav">
                         <div class="navbar">
-                            <div class="navbar__left"><a href="/"><span class="zairzest-beyno-text">ZAIRZEST
-                                    </span><span class="fourO-text">4.0</span></a></div>
-                            <div class="navbar__right"><a href="/about-us">
+                            <div class="navbar__left">
+                                <a href="/zairzest-clone/">
+                                    <span class="zairzest-beyno-text">ZAIRZEST</span>
+                                    <span class="fourO-text">4.0</span>
+                                </a>
+                            </div>
+
+                            <div class="navbar__right desktop-menu">
+                                <a href="/zairzest-clone/about_us.html">
                                     <h4 class="navbar__text">About Us</h4>
-                                </a><a href="/register">
+                                </a>
+                                <a href="/zairzest-clone/registration.html">
                                     <h4 class="navbar__text">Register</h4>
-                                </a><a href="/login">
+                                </a>
+                                <a href="/zairzest-clone/signin.html">
                                     <h4 class="navbar__text">Sign In</h4>
-                                </a><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" class="navbar__menu" height="1em" width="1em"
+                                </a>
+                            </div>
+
+                            <div class="navbar__menu" id="hamburger">
+                                <!-- Hamburger Icon -->
+                                <svg stroke="currentColor" fill="white" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z">
                                     </path>
-                                </svg></div>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Hidden Mobile Menu -->
+                        <div class="mobile-menu hidden" id="mobileMenu">
+                            <a href="/zairzest-clone/about_us.html" style="text-decoration: none;color: white;">
+                                <h4 class="navbar__text" >About Us</h4>
+                            </a>
+                            <a href="/zairzest-clone/registration.html" style="text-decoration: none;color: white;">
+                                <h4 class="navbar__text" >Register</h4>
+                            </a>
+                            <a href="/zairzest-clone/signin.html" style="text-decoration: none;color: white;">
+                                <h4 class="navbar__text" >Sign In</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
+
                 <div class="event-container " data-aos="fade-in">
                     <div class="mname aos-init " data-aos="fade-up">Fun Events</div><br><br>
                     <div class="card-contain " data-aos="fade-up">
@@ -353,6 +381,57 @@
             </div>
         </div>
     </div>
+    <script>
+        const infoBtns = document.querySelectorAll('.bx-info-circle');
+
+
+
+        const closeBtns = document.querySelectorAll('.close-btn');
+        const card = document.querySelector('.card');
+
+        // Add event listeners
+        infoBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.card'); // find the parent card of this button
+                card.classList.toggle('flipped');
+            });
+        });
+
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.card'); // find the parent card of this button
+                card.classList.toggle('flipped');
+            });
+        });
+
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const audio = new Audio('/zairzest-clone/static/media/zairzest_sound.mp3');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+            } else {
+                audio.pause();
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+            }
+        });
+        audio.addEventListener('ended', () => {
+            playPauseIcon.classList.remove('fa-pause');
+            playPauseIcon.classList.add('fa-play');
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+        
+    </script>
 </body>
 
 </html>
